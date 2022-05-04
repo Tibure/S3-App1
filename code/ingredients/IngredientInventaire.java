@@ -3,11 +3,11 @@ package ingredients;
 import ingredients.exceptions.IngredientException;
 
 public class IngredientInventaire {
-    private IngredientInventaire ingredientInventaire;
+    private Ingredient ingredient;
     private int quantite;
 
-    public IngredientInventaire(IngredientInventaire ingredientInventaire, int quantite) {
-        this.ingredientInventaire = ingredientInventaire;
+    public IngredientInventaire(Ingredient ingredient, int quantite) {
+        this.ingredient = ingredient;
         this.quantite = quantite;
     }
 

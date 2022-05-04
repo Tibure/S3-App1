@@ -1,0 +1,9 @@
+Singleton : Inventaire
+Factory : Création des ingrédients
+Observer : observe la facture et notifie le chef quand nouvel item
+State : État des factures
+MVC : ajout de classes pour afficher tout et n'importe quoi et ajout de controllers dans le milieu de tout ça
+
+
+Iterator : Liste des factures
+Builder : Création des plats

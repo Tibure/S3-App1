@@ -1,13 +1,14 @@
 package inventaire;
 
 import ingredients.Ingredient;
+import ingredients.IngredientInventaire;
 
 import java.util.ArrayList;
 
 public class Inventaire {
-    private ArrayList<Ingredient> lesIngredients = new ArrayList<Ingredient>();
+    private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
 
-    public void ajouter (Ingredient ingredient)
+    public void ajouter (IngredientInventaire ingredient)
     {
         lesIngredients.add(ingredient);
     }
