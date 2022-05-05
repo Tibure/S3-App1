@@ -6,6 +6,14 @@ import menufact.plats.exceptions.PlatsException;
 
 public class Chef {
     private String nom;
+    private static Chef instanceChef;
+
+    public static Chef getInstance(){
+        if(instanceChef == null){
+            instanceChef = new Chef();
+        }
+        return instanceChef;
+    }
 
     public String getNom() {
         return  nom;
