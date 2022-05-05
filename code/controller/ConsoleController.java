@@ -12,13 +12,32 @@ import vue.ConsoleVue;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Classe qui controle la vue
+ */
 public class ConsoleController {
-
+    /**
+     *
+     */
     Facture facture;
+    /**
+     *
+     */
     Menu menu;
+    /**
+     *
+     */
     Inventaire inventaire;
+    /**
+     *
+     */
     Client client;
+
+
     //TODO : Mettre les bon paramètres pour les constructeur ou demander à l'utilisateur
+    /**
+     * Constructeur par défaut qui initialise tous les attributs
+     */
     public ConsoleController(){
         facture = new Facture("DESCRIPTION");
         menu = new Menu("DESCRIPTION");
@@ -26,6 +45,10 @@ public class ConsoleController {
         client = new Client(1, "NOM", "NUMERO_CARTE");
     }
 
+    /**
+     * Méthode qui fait afficher le menu des options à l'écran puis réalise la bonne tâche
+     * selon l'option choisi
+     */
     public void choixMenu(){
         int choix;
 
@@ -58,18 +81,31 @@ public class ConsoleController {
         }
     }
 
+    /**
+     *
+     */
     private void afficherMenu(){
         ConsoleVue.afficherMenu(menu);
     }
 
+    /**
+     *
+     */
     private void afficherFacture(){
         ConsoleVue.afficherFacture(facture);
     }
 
+    /**
+     *
+     */
     private void afficherInventaire(){
         ConsoleVue.afficherInventaire(inventaire);
     }
 
+    /**
+     *
+     * @param nom Nom de L'ingrédient à afficher
+     */
     private void afficherIngredient(String nom){
         Ingredient ingredient = null;
         IIterator iterator = inventaire.createIterator();
@@ -85,7 +121,12 @@ public class ConsoleController {
                 ConsoleVue.afficherErreur("Il n'y a pas de " + nom + " dans l'inventaire");
     }
 
+    /**
+     * 
+     */
     private void afficherClient(){
         ConsoleVue.afficherClient(client);
     }
+
+    //TODO: Try catch pour afficher les différentes erreurs
 }

@@ -1,23 +1,32 @@
 package inventaire;
 
-import ingredients.Ingredient;
 import ingredients.IngredientInventaire;
 import ingredients.exceptions.IngredientException;
 
 import java.util.ArrayList;
 
-public class Inventaire implements IContainer{
-    private static final int OK = 0;
-    private static final int PAS_TROUVE = 1;
-    private static final int PAS_ASSEZ = 2;
-
+/**
+ * Classe inventaire contenant une liste des ingrédients, caché par un iterator
+ */
+public class Inventaire implements IInventaire {
+    /**
+     * Tableau dynamique des ingrédients
+     */
     private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
 
+    /**
+     *
+     * @return Un iterator sur les ingrédients
+     */
     public IIterator createIterator(){
         InventaireIterator result = new InventaireIterator();
         return result;
     }
 
+    /**
+     *
+     * @return Une String contenant tous les ingrédients
+     */
     @Override
     public String toString() {
         String retour = "inventaire.Inventaire{ingredients=";
@@ -36,13 +45,27 @@ public class Inventaire implements IContainer{
         return retour;
     }
 
+    /**
+     * Classe privée qui implémente l'interface IIterator. Permet d'itérer sur les ingrédients de l'inventaire, d'ajouter et de retirer des ingrédients
+     */
     private class InventaireIterator implements IIterator
     {
+        /**
+         * Position courante de l'iterator
+         */
         private int position;
 
+        /**
+         * Constructeur par défaut
+         */
         public InventaireIterator(){
             position = 0;
         }
+
+        /**
+         *
+         * @return Vrai s'il y a un prochain, faux sinon
+         */
         @Override
         public boolean hasNext() {
             if(position < lesIngredients.size())
@@ -50,6 +73,11 @@ public class Inventaire implements IContainer{
             else
                 return false;
         }
+
+        /**
+         * Deplace l'iterator sur l'élément suivant
+         * @return L'élément courant
+         */
         @Override
         public IngredientInventaire next(){
             if(this.hasNext())
@@ -58,11 +86,23 @@ public class Inventaire implements IContainer{
                 return null;
         }
 
+        /**
+         * Insère un élément à la fin
+         * @param ingredient Élément à insérer
+         * @return Vrai si ajout réussi, faux sinon
+         */
         @Override
         public boolean insert(IngredientInventaire ingredient) {
             return lesIngredients.add(ingredient);
         }
 
+        /**
+         * Retire la quantité demandé de l'élément spécifié
+         * @param nom Nom de l'ingrédient
+         * @param quantite Quantité à retirer
+         * @return Vrai si l'opération réussi, faux sinon
+         * @throws IngredientException Lance une exception si la quantité est invalide
+         */
         @Override
         public boolean remove(String nom, int quantite) throws IngredientException {
             boolean trouve = false;
@@ -72,7 +112,7 @@ public class Inventaire implements IContainer{
                 {
                     trouve = true;
                     int inventaire = lesIngredients.get(i).getQuantite();
-                    if(inventaire > quantite)
+                    if(inventaire > quantite && quantite >= 0)
                         lesIngredients.get(i).setQuantite(inventaire - quantite);
                     else if(inventaire == quantite)
                         lesIngredients.remove(i);
