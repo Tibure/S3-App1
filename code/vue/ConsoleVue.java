@@ -18,7 +18,9 @@ public class ConsoleVue {
      * @return Le choix de l'utilisateur
      */
     public static int choixUtilisateur(){
-        System.out.println("Bienvenue dans MenuFact02!\n\n1. Afficher le menu\n2. Afficher la facture\n3. Afficher l'inventaire\n4. Afficher un ingrédient\n5. Afficher le client\n9. Quitter\nEntrez le numéro de l'option voulu!\n");
+        System.out.println("Bienvenue dans MenuFact02!\n\n1. Afficher le menu\n2. Afficher la facture\n3. Afficher l'inventaire\n" +
+                "4. Afficher un ingrédient\n5. Afficher le client\n6. Générer le menu\n7. Générer une facture\n8. Remplir l'inventaire\n" +
+                "9. Quitter\nEntrez le numéro de l'option voulu!\n");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
 
@@ -71,6 +73,14 @@ public class ConsoleVue {
      */
     public static void afficherErreur(String erreur){
         System.out.println(erreur);
+    }
+
+    /**
+     *
+     * @param message Le message à afficher
+     */
+    public static void afficherMessage(String message){
+        System.out.println(message);
     }
 
 }

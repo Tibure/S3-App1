@@ -54,7 +54,7 @@ public class ConsoleController {
 
         do{
             choix = ConsoleVue.choixUtilisateur();
-        }while(!((choix > 0 && choix <= 5) || choix == 9));
+        }while(!(choix > 0 && choix <= 9));
 
         switch (choix){
             case 1:
@@ -66,13 +66,22 @@ public class ConsoleController {
             case 3:
                 afficherInventaire();
                 break;
+            case 4:
+                ConsoleVue.afficherMessage("Entrez le nom de l'ingrédient");
+                Scanner scanner = new Scanner(System.in);
+                afficherIngredient(scanner.nextLine());
+                break;
             case 5:
                 afficherClient();
                 break;
-            case 4:
-                System.out.println("Entrez le nom de l'ingrédient");
-                Scanner scanner = new Scanner(System.in);
-                afficherIngredient(scanner.nextLine());
+            case 6:
+                genereMenu();
+                break;
+            case 7:
+                genereFacture();
+                break;
+            case 8:
+                fillInventaire();
                 break;
             default:
                 System.exit(1);
@@ -122,11 +131,34 @@ public class ConsoleController {
     }
 
     /**
-     * 
+     *
      */
     private void afficherClient(){
         ConsoleVue.afficherClient(client);
     }
+    //TODO
+    /**
+     * Méthode pour générer le menu
+     */
+    private void genereMenu(){ConsoleVue.afficherMessage("TODO");}
+    //TODO
+    /**
+     * Méthode pour générer une facture aléatoire
+     */
+    private void genereFacture(){ConsoleVue.afficherMessage("TODO");}
+
+    //TODO
+    /**
+     * Méthode pour remplir l'inventaire avec des quantités aléatoires
+     */
+    private void fillInventaire(){ConsoleVue.afficherMessage("TODO");}
+
 
     //TODO: Try catch pour afficher les différentes erreurs
+    public static void main(String[] args) {
+        ConsoleController controller = new ConsoleController();
+        while(true) {
+            controller.choixMenu();
+        }
+    }
 }
