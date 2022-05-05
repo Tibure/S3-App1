@@ -4,16 +4,6 @@ import menufact.facture.*;
 import menufact.plats.PlatChoisi;
 import menufact.plats.exceptions.PlatsException;
 
-/*
-Ordre d'éxécution commande :
-1. On recoit une commande
-2. On vérifie les ingrédients
-3. On prépare le met
-4. On termine le plat
-5. On le sert au client
- */
-
-
 public class Chef {
     private String nom;
 
@@ -69,8 +59,8 @@ public class Chef {
 
     @Override
     public String toString(){
-        return  "" +
-                "" +
-                "" ;
+        return  "Chef {" +
+                "Nom du chef: " + nom +
+                "}" ;
     }
 }
