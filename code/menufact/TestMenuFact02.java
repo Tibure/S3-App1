@@ -6,6 +6,7 @@ import menufact.facture.Facture;
 import menufact.plats.PlatAuMenu;
 import menufact.plats.PlatChoisi;
 import menufact.plats.PlatSante;
+import menufact.plats.exceptions.PlatsException;
 
 public class TestMenuFact02 {
 
@@ -58,6 +59,8 @@ public class TestMenuFact02 {
             t.test7_CreerFacture(f1, m1);
         } catch (FactureException e) {
             System.out.println(e.getMessage());
+        } catch (PlatsException e) {
+            throw new RuntimeException(e);
         }
 
 
@@ -72,6 +75,8 @@ public class TestMenuFact02 {
         catch (MenuException me)
         {
             System.out.println(me);
+        } catch (PlatsException e) {
+            throw new RuntimeException(e);
         }
 
         t.test9_PayerFacture(f1);
@@ -85,6 +90,8 @@ public class TestMenuFact02 {
         catch (MenuException me)
         {
             System.out.println(me);
+        } catch (PlatsException e) {
+            throw new RuntimeException(e);
         }
 
         try {
@@ -234,7 +241,7 @@ public class TestMenuFact02 {
         }
     }
 
-    private void test7_CreerFacture(Facture f1, Menu m1) throws FactureException
+    private void test7_CreerFacture(Facture f1, Menu m1) throws FactureException, PlatsException
     {
         System.out.println("===test7_CreerFacture");
 
@@ -256,7 +263,7 @@ public class TestMenuFact02 {
         f1.associerClient(c1);
         System.out.println(f1);
     }
-    private void test8_AjouterPlatsFacture(Facture f1, Menu m1, int pos) throws MenuException,FactureException
+    private void test8_AjouterPlatsFacture(Facture f1, Menu m1, int pos) throws PlatsException,MenuException,FactureException
     {
         System.out.println("===test8_AjouterPlatsFacture");
 

@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2308e31-38f0-49f1-b2f6-fec83cbafcdc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App1S3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/Chef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/Commande.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/CommandeEtat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/Impossible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/Preparation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/Servi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/menufact/facture/Termine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/menufact/plats/exceptions/PlatsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/Chef.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/Chef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/TestMenuFact02.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/TestMenuFact02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/CommandeEtat.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/CommandeEtat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Facture.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Facture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Impossible.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Impossible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Preparation.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Preparation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Servi.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Servi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/facture/Termine.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/facture/Termine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/plats/PlatChoisi.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/plats/PlatChoisi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/menufact/plats/PlatEnfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/menufact/plats/PlatEnfant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651770018007</updated>
-      <workItem from="1651770021845" duration="1194000" />
+      <workItem from="1651770021845" duration="8723000" />
     </task>
     <servers />
   </component>
