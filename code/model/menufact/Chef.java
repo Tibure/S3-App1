@@ -62,13 +62,11 @@ public class Chef {
         return  verif;
     }
 
-
-
-
     @Override
     public String toString(){
         return  "Chef {" +
                 "Nom du chef: " + nom +
                 "}" ;
     }
+
 }
