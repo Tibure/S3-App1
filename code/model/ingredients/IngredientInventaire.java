@@ -27,7 +27,7 @@ public class IngredientInventaire {
      * @throws IngredientException Lance une exception si la quantité n'est pas valide
      */
     public IngredientInventaire(Ingredient ingredient, int quantite, TypeUnit unit) throws IngredientException{
-        this.ingredient = ingredient;
+        setIngredient(ingredient);
         setQuantite(quantite);
         setUnit(unit);
     }

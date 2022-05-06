@@ -5,30 +5,62 @@ import model.menufact.plats.PlatAuMenu;
 
 import java.util.ArrayList;
 
+/**
+ * Classe qui gère le menu
+ */
 public class Menu {
+    /**
+     * Description du menu
+     */
     private String description;
+    /**
+     * Indice du plat courant du menu
+     */
     private int courant;
+    /**
+     * Liste des plats du menu
+     */
     private ArrayList<PlatAuMenu> plat = new ArrayList<PlatAuMenu>();
 
+    /**
+     * Constructeur avec paramètre
+     * @param description Description du menu
+     */
     public Menu(String description) {
         this.description = description;
     }
 
+    /**
+     *
+     * @param p Plat à ajouter au menu
+     */
     void ajoute (PlatAuMenu p)
     {
         plat.add(p);
     }
 
+    /**
+     * Modifie l'indice du plat courant
+     * @param i L'indice à assigner au courant
+     */
     public void position(int i)
     {
         courant = i;
     }
 
+    /**
+     *
+     * @return Le plat courant
+     */
     public PlatAuMenu platCourant()
     {
         return plat.get(courant);
     }
 
+    /**
+     *
+     * @throws MenuException Lance une exception si on est déjà au dernier plat
+     */
     public void positionSuivante() throws MenuException
     {
         if (courant+1 >= plat.size())
@@ -37,6 +69,10 @@ public class Menu {
             courant++;
     }
 
+    /**
+     *
+     * @throws MenuException Lance une exception si on est déjà au premier plat
+     */
     public void positionPrecedente() throws MenuException
     {
         if (courant-1 < 0)
@@ -45,7 +81,10 @@ public class Menu {
             courant--;
     }
 
-
+    /**
+     *
+     * @return Une String contenant toutes les informations du menu
+     */
     @Override
     public String toString() {
         return "model.menufact.Menu{" +
