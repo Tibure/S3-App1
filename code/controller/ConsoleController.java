@@ -1,15 +1,13 @@
 package controller;
 
-import ingredients.Ingredient;
-import ingredients.IngredientInventaire;
-import inventaire.IIterator;
-import inventaire.Inventaire;
-import menufact.Client;
-import menufact.Menu;
-import menufact.facture.Facture;
+import model.ingredients.Ingredient;
+import model.inventaire.IIterator;
+import model.inventaire.Inventaire;
+import model.menufact.Client;
+import model.menufact.Menu;
+import model.menufact.facture.Facture;
 import vue.ConsoleVue;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -127,7 +125,7 @@ public class ConsoleController {
                 ConsoleVue.afficherIngredient(ingredient);
             }
             else
-                ConsoleVue.afficherErreur("Il n'y a pas de " + nom + " dans l'inventaire");
+                ConsoleVue.afficherErreur("Il n'y a pas de " + nom + " dans l'model.inventaire");
     }
 
     /**
@@ -149,7 +147,7 @@ public class ConsoleController {
 
     //TODO
     /**
-     * Méthode pour remplir l'inventaire avec des quantités aléatoires
+     * Méthode pour remplir l'model.inventaire avec des quantités aléatoires
      */
     private void fillInventaire(){ConsoleVue.afficherMessage("TODO");}
 

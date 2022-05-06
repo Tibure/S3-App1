@@ -1,10 +1,10 @@
 package vue;
 
-import ingredients.Ingredient;
-import inventaire.Inventaire;
-import menufact.Client;
-import menufact.Menu;
-import menufact.facture.Facture;
+import model.ingredients.Ingredient;
+import model.inventaire.Inventaire;
+import model.menufact.Client;
+import model.menufact.Menu;
+import model.menufact.facture.Facture;
 
 import java.util.Scanner;
 
@@ -18,8 +18,8 @@ public class ConsoleVue {
      * @return Le choix de l'utilisateur
      */
     public static int choixUtilisateur(){
-        System.out.println("Bienvenue dans MenuFact02!\n\n1. Afficher le menu\n2. Afficher la facture\n3. Afficher l'inventaire\n" +
-                "4. Afficher un ingrédient\n5. Afficher le client\n6. Générer le menu\n7. Générer une facture\n8. Remplir l'inventaire\n" +
+        System.out.println("Bienvenue dans MenuFact02!\n\n1. Afficher le menu\n2. Afficher la facture\n3. Afficher l'model.inventaire\n" +
+                "4. Afficher un ingrédient\n5. Afficher le client\n6. Générer le menu\n7. Générer une facture\n8. Remplir l'model.inventaire\n" +
                 "9. Quitter\nEntrez le numéro de l'option voulu!\n");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
@@ -44,7 +44,7 @@ public class ConsoleVue {
 
     /**
      *
-     * @param inventaire L'inventaire à afficher
+     * @param inventaire L'model.inventaire à afficher
      */
     public static void afficherInventaire(Inventaire inventaire){
         System.out.println(inventaire.toString());
