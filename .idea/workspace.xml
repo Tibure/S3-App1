@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2308e31-38f0-49f1-b2f6-fec83cbafcdc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Rapport-S3_APP1.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/model/menufact/Chef.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/Chef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/model/menufact/TestMenuFact02.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/TestMenuFact02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/model/menufact/plats/PlatAuMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/plats/PlatAuMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/model/menufact/plats/PlatChoisi.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/plats/PlatChoisi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/model/menufact/plats/PlatEnfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/plats/PlatEnfant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/model/menufact/plats/PlatSante.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/model/menufact/plats/PlatSante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651770018007</updated>
       <workItem from="1651770021845" duration="11027000" />
-      <workItem from="1651858513052" duration="717000" />
+      <workItem from="1651858513052" duration="3592000" />
     </task>
     <servers />
   </component>

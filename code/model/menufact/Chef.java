@@ -38,6 +38,12 @@ public class Chef {
         //return aPlat;
     }
 
+    /**
+     *
+     * @param aPlat
+     * @return aPlat modifie avec
+     * @throws PlatsException
+     */
     public PlatChoisi commanderPlat(PlatChoisi aPlat) throws PlatsException{
         aPlat.setEtat(new Commande());
 
