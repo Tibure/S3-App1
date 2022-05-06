@@ -1,5 +1,9 @@
 package model.menufact.plats;
 
+import model.ingredients.Ingredient;
+
+import java.util.Map;
+
 /**
  * Classe qui contrôle les plats du menu santé
  */
@@ -26,8 +30,8 @@ public class PlatSante extends PlatAuMenu {
      * @param chol Quantité de cholestérol du plat
      * @param gras Quantité de gras du plat
      */
-    public PlatSante(int code, String description, double prix, double kcal, double chol, double gras) {
-        super(code, description, prix);
+    public PlatSante(int code, String description, double prix, double kcal, double chol, double gras, Map<Ingredient, Integer> ingredients) {
+        super(code, description, prix, ingredients);
         this.kcal = kcal;
         this.chol = chol;
         this.gras = gras;

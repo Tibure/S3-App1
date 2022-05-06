@@ -33,12 +33,12 @@ public class Inventaire implements IInventaire {
 
         if(lesIngredients.size() > 0){
             for(IngredientInventaire ingredientInventaire: lesIngredients){
-                retour += ingredientInventaire.toString() + ", ";
+                retour += ingredientInventaire.toString() + "\n";
             }
         }
 
-        if(retour.endsWith(", "))
-            retour = retour.substring(0, retour.length()-2);
+        if(retour.endsWith("\n"))
+            retour = retour.substring(0, retour.length()-1);
 
         retour += "}";
 

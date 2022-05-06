@@ -1,5 +1,9 @@
 package model.menufact.plats;
 
+import model.ingredients.Ingredient;
+
+import java.util.Map;
+
 /**
  * Classe qui contrôle les plats du menu
  */
@@ -17,16 +21,19 @@ public class PlatAuMenu {
      */
     private double prix;
 
+    private Map<Ingredient, Integer> ingredients;
+
     /**
      * Constructeur avec paramètres de la classe PlatAuMenu
      * @param code Code du plat
      * @param description Description du plat
      * @param prix Prix total du plat
      */
-    public PlatAuMenu(int code, String description, double prix) {
+    public PlatAuMenu(int code, String description, double prix, Map<Ingredient, Integer> ingredients) {
         this.code = code;
         this.description = description;
         this.prix = prix;
+        this.ingredients = ingredients;
     }
 
     /**

@@ -26,7 +26,7 @@ public class TestMenuFact02 {
 
         TestMenuFact02 t = new TestMenuFact02();
 
-        PlatAuMenu p1 = new PlatAuMenu(0,"PlatAuMenu0",10);
+        /*PlatAuMenu p1 = new PlatAuMenu(0,"PlatAuMenu0",10);
         PlatAuMenu p2 = new PlatAuMenu(1,"PlatAuMenu1",20);
         PlatAuMenu p3 = new PlatAuMenu(2,"PlatAuMenu2",30);
         PlatAuMenu p4 = new PlatAuMenu(3,"PlatAuMenu3",40);
@@ -37,7 +37,7 @@ public class TestMenuFact02 {
         PlatSante ps2 = new PlatSante(11,"PlatSante1",20,11,11,11);
         PlatSante ps3 = new PlatSante(12,"PlatSante2",30,11,11,11);
         PlatSante ps4 = new PlatSante(13,"PlatSante3",40,11,11,11);
-        PlatSante ps5 = new PlatSante(14,"PlatSante4",50,11,11,11);
+        PlatSante ps5 = new PlatSante(14,"PlatSante4",50,11,11,11);*/
 
 
         Menu m1 = new Menu("model.menufact.Menu 1");
@@ -45,13 +45,13 @@ public class TestMenuFact02 {
 
         Facture f1 = new Facture("Ma facture");
 
-        Client c1 = new Client(1,"Mr Client","1234567890");
+        //Client c1 = new Client(1,"Mr Client","1234567890");
 
 
-        t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);
+        /*t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);
         t. test2_AffichePlatsSante(trace, ps1,ps2,ps3,ps4,ps5);
 
-        t.test4_AjoutPlatsAuMenu(trace, m1, p1, p2, ps1, ps2, m2, p3, p4, ps3, ps4);
+        t.test4_AjoutPlatsAuMenu(trace, m1, p1, p2, ps1, ps2, m2, p3, p4, ps3, ps4);*/
 
 
         try {
@@ -75,7 +75,7 @@ public class TestMenuFact02 {
         }
 
 
-        t.test8_AjouterClientFacture(f1, c1);
+        //t.test8_AjouterClientFacture(f1, c1);
 
         try {
             t.test8_AjouterPlatsFacture(f1, m1,1);

@@ -1,5 +1,8 @@
 package model.menufact.plats;
+import model.ingredients.Ingredient;
 import model.menufact.plats.exceptions.PlatsException;
+
+import java.util.Map;
 
 /**
  * Classe qui contrôle les plats du menu enfant
@@ -24,8 +27,8 @@ public class PlatEnfant extends PlatAuMenu{
      * @param proportion Proportion du plat par rapport au menu régulier
      * @throws PlatsException Lance une exception lorsque la proportion n'est pas conforme
      */
-    public PlatEnfant(int code, String description, double prix, double proportion) throws PlatsException {
-        super(code, description, prix);
+    public PlatEnfant(int code, String description, double prix, double proportion, Map<Ingredient, Integer> ingredients) throws PlatsException {
+        super(code, description, prix, ingredients);
         //this.proportion = proportion;
         setProportion(proportion);
     }

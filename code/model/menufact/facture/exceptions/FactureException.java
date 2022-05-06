@@ -5,7 +5,7 @@ package model.menufact.facture.exceptions;
  */
 public class FactureException extends Exception{
     /**
-     * Constrcuteur par défaut
+     * Constructeur par défaut
      * @param message Message d'erreur
      */
     public FactureException(String message){

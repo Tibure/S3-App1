@@ -9,8 +9,8 @@ public class TestMenuFact01 {
     public static void main(String[] args) {
 
         try {
-            System.out.println("===model.menufact.plats.PlatAuMenu Constructeur 3 arguments");
-            PlatAuMenu p1 = new PlatAuMenu(0, "Frites sauce", 11.50);
+            /*System.out.println("===model.menufact.plats.PlatAuMenu Constructeur 3 arguments");
+            //PlatAuMenu p1 = new PlatAuMenu(0, "Frites sauce", 11.50);
             System.out.println(p1);
 
             System.out.println("===model.menufact.plats.PlatAuMenu Constructeur 3 arguments");
@@ -31,9 +31,9 @@ public class TestMenuFact01 {
             menu.ajoute(p2);
             menu.ajoute(ps1);
             menu.ajoute(ps2);
-            System.out.println(menu);
+            System.out.println(menu);*/
 
-            System.out.println("===model.menufact.Menu position 1, plat à la position 0");
+            /*System.out.println("===model.menufact.Menu position 1, plat à la position 0");
             menu.position(0);
             System.out.println(menu.platCourant());
 
@@ -79,7 +79,7 @@ public class TestMenuFact01 {
 
             facture.ouvrir();
             System.out.println(facture);
-            System.out.println("Etat = " + facture.getEtat());
+            System.out.println("Etat = " + facture.getEtat());*/
         }catch (Exception fe)
         {
             System.out.println(fe.getMessage());
