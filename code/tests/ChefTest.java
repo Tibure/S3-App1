@@ -36,6 +36,10 @@ class ChefTest {
     }
 
     @Test
+    void impossiblePlat() {
+    }
+
+    @Test
     void commanderPlat() {
     }
 
@@ -45,5 +49,9 @@ class ChefTest {
 
     @Test
     void testToString() {
+    }
+
+    @Test
+    void update() {
     }
 }

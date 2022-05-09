@@ -40,6 +40,14 @@ class PlatSanteTest {
     }
 
     @Test
+    void getIngredients() {
+    }
+
+    @Test
+    void setIngredient() {
+    }
+
+    @Test
     void testToString1() {
     }
 

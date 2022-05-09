@@ -2,7 +2,6 @@ package controller;
 
 import model.ingredients.*;
 import model.ingredients.exceptions.IngredientException;
-import model.inventaire.IInventaire;
 import model.inventaire.IIterator;
 import model.inventaire.Inventaire;
 import model.menufact.Chef;
@@ -12,6 +11,7 @@ import model.menufact.exceptions.ClientException;
 import model.menufact.facture.Facture;
 import model.menufact.facture.exceptions.FactureException;
 import model.menufact.plats.PlatAuMenu;
+import model.menufact.plats.PlatBuilder;
 import model.menufact.plats.PlatChoisi;
 import model.menufact.plats.exceptions.PlatsException;
 import vue.ConsoleVue;
@@ -177,41 +177,41 @@ public class ConsoleController {
      */
     private void genereMenu(){
         IngredientFactory factory = new IngredientFactory();
-        Map<Ingredient, Integer> saladeDeFruits = null, salade = null, smoothie = null, brochettePoulet = null, steak = null, filetDeSaumon = null;
+        Map<Ingredient, Double> saladeDeFruits = null, salade = null, smoothie = null, brochettePoulet = null, steak = null, filetDeSaumon = null;
         try {
-            saladeDeFruits = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.FRUIT, "Poire", "Description Poire"), 1),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Ananas", "Description Ananas"), 1),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Raisin", "Description Raisin"), 50),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Pêche", "Description Pêche"), 1),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Kiwi", "Description Kiwi"), 1));
+            saladeDeFruits = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.FRUIT, "Poire", "Description Poire"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Ananas", "Description Ananas"), 0.5),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Raisin", "Description Raisin"), 50.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Pêche", "Description Pêche"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Kiwi", "Description Kiwi"), 1.0));
 
-            salade = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.LEGUME, "Laitue", "Description Laitue"), 1),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Tomate", "Description Tomate"), 1),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Concombre", "Description Concombre"), 1),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Poivron", "Description Poivron"), 1));
+            salade = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.LEGUME, "Laitue", "Description Laitue"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Tomate", "Description Tomate"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Concombre", "Description Concombre"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Poivron", "Description Poivron"), 1.0));
 
-            smoothie = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.FRUIT, "Banane", "Description Banane"), 1),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Fraise", "Description Fraise"), 75),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Framboise", "Description Framboise"), 50),
-                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Bleuet", "Description Bleuet"), 60));
+            smoothie = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.FRUIT, "Banane", "Description Banane"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Fraise", "Description Fraise"), 75.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Framboise", "Description Framboise"), 50.0),
+                    entry(factory.getIngredient(TypeIngredient.FRUIT, "Bleuet", "Description Bleuet"), 60.0));
 
-            brochettePoulet = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Poulet", "Description Poulet"), 200),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Poivron", "Description Poivron"), 1),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Oignon", "Description Oignon"), 1),
-                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Beurre", "Description Beurre"), 20),
-                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Crème", "Description Crème"), 125));
+            brochettePoulet = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Poulet", "Description Poulet"), 200.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Poivron", "Description Poivron"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Oignon", "Description Oignon"), 1.0),
+                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Beurre", "Description Beurre"), 20.0),
+                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Crème", "Description Crème"), 125.0));
 
-            steak = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Boeuf", "Description Boeuf"), 200),
-                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Patate", "Description Patate"), 2),
-                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Crème sûre", "Description Crème sûre"), 50),
-                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Lait", "Description Lait"), 250),
-                    entry(factory.getIngredient(TypeIngredient.EPICE, "Poivre", "Description Poivre"), 5));
+            steak = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Boeuf", "Description Boeuf"), 200.0),
+                    entry(factory.getIngredient(TypeIngredient.LEGUME, "Patate", "Description Patate"), 2.0),
+                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Crème sûre", "Description Crème sûre"), 50.0),
+                    entry(factory.getIngredient(TypeIngredient.LAITIER, "Lait", "Description Lait"), 250.0),
+                    entry(factory.getIngredient(TypeIngredient.EPICE, "Poivre", "Description Poivre"), 5.0));
 
-            filetDeSaumon = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Saumon", "Description Saumon"), 200),
-                    entry(factory.getIngredient(TypeIngredient.EPICE, "Basilic", "Description Basilic"), 5),
-                    entry(factory.getIngredient(TypeIngredient.EPICE, "Cerfeuil", "Description Raisin"), 5),
-                    entry(factory.getIngredient(TypeIngredient.EPICE, "Poivre", "Description Poivre"), 5),
-                    entry(factory.getIngredient(TypeIngredient.EPICE, "Persil", "Description Persil"), 5));
+            filetDeSaumon = Map.ofEntries(entry(factory.getIngredient(TypeIngredient.VIANDE, "Saumon", "Description Saumon"), 200.0),
+                    entry(factory.getIngredient(TypeIngredient.EPICE, "Basilic", "Description Basilic"), 5.0),
+                    entry(factory.getIngredient(TypeIngredient.EPICE, "Cerfeuil", "Description Raisin"), 5.0),
+                    entry(factory.getIngredient(TypeIngredient.EPICE, "Poivre", "Description Poivre"), 5.0),
+                    entry(factory.getIngredient(TypeIngredient.EPICE, "Persil", "Description Persil"), 5.0));
 
         }catch (IngredientException e){
             ConsoleVue.afficherErreur(e.getMessage());
@@ -224,6 +224,16 @@ public class ConsoleController {
         this.menu.ajoute(p4 = new PlatAuMenu(4, "Brochette de poulet", 17.99, brochettePoulet));
         this.menu.ajoute(p5 = new PlatAuMenu(5, "Steak et frites", 22.99, steak));
         this.menu.ajoute(p6 = new PlatAuMenu(6, "Filet de saumon", 19.99, filetDeSaumon));
+
+        try {
+            PlatAuMenu plat = new PlatBuilder().setCode(1)
+                    .setDescription("Salade de fruit")
+                    .setPrix(8.99)
+                    .setIngredients(saladeDeFruits)
+                    .setProportion(0.8).getResult();
+        } catch (PlatsException e) {
+            ConsoleVue.afficherErreur(e.getMessage());
+        }
     }
 
     /**

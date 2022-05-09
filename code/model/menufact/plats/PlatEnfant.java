@@ -2,6 +2,7 @@ package model.menufact.plats;
 import model.ingredients.Ingredient;
 import model.menufact.plats.exceptions.PlatsException;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -27,10 +28,17 @@ public class PlatEnfant extends PlatAuMenu{
      * @param proportion Proportion du plat par rapport au menu régulier
      * @throws PlatsException Lance une exception lorsque la proportion n'est pas conforme
      */
-    public PlatEnfant(int code, String description, double prix, double proportion, Map<Ingredient, Integer> ingredients) throws PlatsException {
-        super(code, description, prix, ingredients);
-        //this.proportion = proportion;
+    public PlatEnfant(int code, String description, double prix, double proportion, Map<Ingredient, Double> ingredients) throws PlatsException {
         setProportion(proportion);
+        Map<Ingredient, Double> ingredientsKid = new HashMap<>();
+        for(Ingredient ing: ingredients.keySet()){
+            ingredientsKid.put(ing, ingredients.get(ing)*proportion);
+        }
+        this.setCode(code);
+        this.setDescription(description);
+        this.setPrix(prix);
+        this.setIngredient(ingredientsKid);
+
     }
 
     /**

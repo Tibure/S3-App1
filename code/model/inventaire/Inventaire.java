@@ -123,7 +123,7 @@ public class Inventaire implements IInventaire {
                 if(lesIngredients.get(i).getIngredient().getNom().equals(nom))
                 {
                     trouve = true;
-                    int inventaire = lesIngredients.get(i).getQuantite();
+                    double inventaire = lesIngredients.get(i).getQuantite();
                     if(inventaire > quantite && quantite >= 0)
                         lesIngredients.get(i).setQuantite(inventaire - quantite);
                     else if(inventaire == quantite)
@@ -133,6 +133,10 @@ public class Inventaire implements IInventaire {
                 }
             }
             return trouve;
+        }
+
+        public void setPosition(int position){
+            this.position = position;
         }
     }
 }

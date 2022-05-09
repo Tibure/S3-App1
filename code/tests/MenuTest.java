@@ -1,34 +1,37 @@
 package tests;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MenuTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void ajoute() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void position() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void platCourant() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void positionSuivante() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void positionPrecedente() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testToString() {
     }
 }

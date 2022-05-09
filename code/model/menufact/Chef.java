@@ -10,6 +10,8 @@ import model.menufact.plats.PlatAuMenu;
 import model.menufact.plats.PlatChoisi;
 import model.menufact.plats.exceptions.PlatsException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -59,7 +61,7 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void preparerPlat(PlatChoisi aPlat) throws PlatsException{
-        aPlat.setEtat(new Preparation());
+        new Preparation().changeState(aPlat);
     }
 
     /**
@@ -68,7 +70,7 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void terminerPlat(PlatChoisi aPlat) throws PlatsException{
-        aPlat.setEtat(new Termine());
+        new Termine().changeState(aPlat);
     }
 
     /**
@@ -77,8 +79,7 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void servirPlat(PlatChoisi aPlat) throws PlatsException {
-        aPlat.setEtat(new Servi());
-        //return aPlat;
+        new Servi().changeState(aPlat);
     }
 
     /**
@@ -87,7 +88,7 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void impossiblePlat(PlatChoisi aPlat) throws PlatsException{
-        aPlat.setEtat(new Impossible());
+        new Impossible().changeState(aPlat);
     }
 
     /**
@@ -116,25 +117,27 @@ public class Chef implements  Subscriber{
      * @throws IngredientException Lance une exception si les ingrédients nécessaires pour la préparation d'un plat ne sont pas disponibles
      */
     public boolean verifierSiPossible(PlatChoisi aPlat) throws IngredientException {
-        Map< Ingredient, Integer> ingredients = aPlat.getPlat().getIngredients();
+        Map< Ingredient, Double> ingredients = aPlat.getPlat().getIngredients();
         Inventaire inventaire = Inventaire.getInstance();
         IIterator iterator = inventaire.createIterator();
 
-        IngredientInventaire ingredientNecessaire = null;
-        Ingredient[] ingredientsTab = (Ingredient[]) ingredients.keySet().toArray();
+        IngredientInventaire ingredientsInventaire = null;
+        List<Ingredient> ingredientsList = ingredients.keySet().stream().toList();
+
 
 
 
         boolean verif = true;
 
-        for(int i = 0; i < ingredientsTab.length && verif; i++) {
+        for(int i = 0; i < ingredientsList.size() && verif; i++) {
+            iterator.setPosition(0);
             while (iterator.hasNext()) {
-                ingredientNecessaire = iterator.next();
+                ingredientsInventaire = iterator.next();
 
-                if(ingredientNecessaire.getIngredient().getNom().equals(ingredientsTab[i].getNom())) {
+                if(ingredientsInventaire.getIngredient().getNom().equals(ingredientsList.get(i).getNom())) {
                     verif = true;
-                    if (ingredientNecessaire.getQuantite() <= ingredients.get(ingredientsTab[i]).intValue()) {
-                        iterator.remove(ingredientsTab[i].getNom(), ingredients.get(ingredientsTab[i]).intValue());
+                    if (ingredientsInventaire.getQuantite() >= ingredients.get(ingredientsList.get(i)).intValue()) {
+                        iterator.remove(ingredientsList.get(i).getNom(), ingredients.get(ingredientsList.get(i)).intValue());
                         break;
                     }
                     else {

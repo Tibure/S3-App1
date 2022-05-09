@@ -34,4 +34,6 @@ public interface IIterator {
      * @throws IngredientException Lance une exception si la quantité est invalide
      */
     public boolean remove(String nom, int quantite) throws IngredientException;
+
+    public void setPosition(int position);
 }

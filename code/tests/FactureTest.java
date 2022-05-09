@@ -12,47 +12,46 @@ class FactureTest {
     }
 
     @Test
+    void associerClient() {
+    }
+
+    @Test
+    void associerChef() {
+    }
+
+    @Test
+    void sousTotal() {
+    }
+
+    @Test
+    void total() {
+    }
+
+    @Test
+    void payer() {
+    }
+
+    @Test
+    void fermer() {
+    }
+
+    @Test
+    void ouvrir() {
+    }
+
+    @Test
+    void getEtat() {
+    }
+
+    @Test
+    void ajoutePlat() {
+    }
+
+    @Test
     void testToString() {
     }
 
     @Test
-    void testAssocierClient() {
-    }
-
-    @Test
-    void testAssocierChef() {
-    }
-
-    @Test
-    void testSousTotal() {
-    }
-
-    @Test
-    void testTotal() {
-    }
-
-    @Test
-    void testPayer() {
-    }
-
-    @Test
-    void testFermer() {
-    }
-
-    @Test
-    void testOuvrir() {
-    }
-
-    @Test
-    void testGetEtat() {
-    }
-
-    @Test
-    void testAjoutePlat() {
-    }
-
-
-    @Test
-    void testGenererFacture() {
+    void genererFacture() {
     }
 }
