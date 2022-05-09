@@ -27,6 +27,7 @@ public class Menu {
      * @param description Description du menu
      */
     public Menu(String description) {
+        courant = -1;
         this.description = description;
     }
 
@@ -37,15 +38,17 @@ public class Menu {
     public void ajoute (PlatAuMenu p)
     {
         plat.add(p);
+        courant++;
     }
 
     /**
      * Modifie l'indice du plat courant
      * @param i L'indice à assigner au courant
      */
-    public void position(int i)
+    public void setPosition(int i)
     {
-        courant = i;
+        if(i >= 0 && i < plat.size())
+            courant = i;
     }
 
     /**
@@ -54,7 +57,10 @@ public class Menu {
      */
     public PlatAuMenu platCourant()
     {
-        return plat.get(courant);
+        if(courant >= 0 && courant <= plat.size())
+            return plat.get(courant);
+        else
+            return null;
     }
 
     /**
@@ -88,7 +94,7 @@ public class Menu {
     @Override
     public String toString() {
         return "model.menufact.Menu{" +
-                "description='" + description + '\'' +
+                "description=" + description +
                 ", courant=" + courant +
                 ", plat=" + "\n" + plat +
                 '}';

@@ -194,7 +194,7 @@ public class TestMenuFact02 {
         System.out.println("=== test5_DeplacementMenuAvancer");
 
         System.out.println("===Selectionner un plat du menu 0");
-        m1.position(0);
+        m1.setPosition(0);
 
         System.out.println("=== Afficher le plat courant");
         System.out.println(m1.platCourant());
@@ -224,7 +224,7 @@ public class TestMenuFact02 {
         System.out.println("===test6_DeplacementMenuReculer");
 
         System.out.println("===Selectionner un plat du menu 3");
-        m1.position(3);
+        m1.setPosition(3);
 
         System.out.println("=== Afficher le plat courant");
         System.out.println(m1.platCourant());
