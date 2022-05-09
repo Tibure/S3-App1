@@ -1,10 +1,14 @@
 package model.menufact.facture;
 
+import model.menufact.plats.PlatChoisi;
+import model.menufact.plats.exceptions.PlatsException;
+
 public class Commande implements CommandeEtat {
     private Etats etat = Etats.COMMANDE;
     @Override
-    public void changeState(CommandeEtat state) {
-
+    public boolean changeState(PlatChoisi aPlatChoisi) throws PlatsException {
+        aPlatChoisi.setEtat(this);
+        return true;
     }
 
     @Override

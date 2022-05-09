@@ -1,5 +1,6 @@
 package model.menufact;
 
+import model.inventaire.Inventaire;
 import model.menufact.facture.*;
 import model.menufact.plats.PlatChoisi;
 import model.menufact.plats.exceptions.PlatsException;
@@ -59,6 +60,7 @@ public class Chef {
     }
     public boolean verifierSiPossible(PlatChoisi aPlat) throws PlatsException{
         //check if model.ingredients disponibles
+
         boolean verif = true;
         //if("pasAssez"){
         if(verif){

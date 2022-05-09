@@ -80,12 +80,10 @@ public class PlatChoisi {
      * @throws PlatsException Lance une exception si le changement d'état est impossible
      */
     public void setEtat(CommandeEtat aEtat) throws PlatsException{
-        //TODO: Modifier avec les états de l'énum et changement d'état
         if(etat == null) {
-            etat = aEtat;
-        } else {
+            this.etat = aEtat;
+        }else if(!etat.changeState(this)) {
             throw new PlatsException("Impossible de faire le changement d'état");
         }
     }
-
 }
