@@ -13,7 +13,7 @@ public class IngredientInventaire {
     /**
      * Quantité en model.inventaire
      */
-    private int quantite;
+    private double quantite;
     /**
      * Unité de mesure de l'ingrédient
      */
@@ -26,7 +26,7 @@ public class IngredientInventaire {
      * @param unit  Unitée de mesure de l'ingrédient
      * @throws IngredientException Lance une exception si la quantité n'est pas valide
      */
-    public IngredientInventaire(Ingredient ingredient, int quantite, TypeUnit unit) throws IngredientException{
+    public IngredientInventaire(Ingredient ingredient, double quantite, TypeUnit unit) throws IngredientException{
         setIngredient(ingredient);
         setQuantite(quantite);
         setUnit(unit);
@@ -36,7 +36,7 @@ public class IngredientInventaire {
      *
      * @return La quantité
      */
-    public int getQuantite() {
+    public double getQuantite() {
         return quantite;
     }
 
@@ -45,7 +45,7 @@ public class IngredientInventaire {
      * @param quantite La quantité à modifier
      * @throws IngredientException Lance une qexception si la quantité n'est pas valide
      */
-    public void setQuantite(int quantite) throws IngredientException{
+    public void setQuantite(double quantite) throws IngredientException{
 
         if (quantite < 0)
             throw new IngredientException("Il n'est pas possible d'avoir une quantité negative");

@@ -5,34 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlatAuMenuTest {
+class PlatBuilderTest {
 
     @BeforeEach
     void setUp() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void getCode() {
-    }
-
-    @Test
-    void setCode() {
-    }
-
-    @Test
-    void getDescription() {
-    }
-
-    @Test
-    void setDescription() {
-    }
-
-    @Test
-    void getPrix() {
     }
 
     @Test
@@ -40,10 +16,34 @@ class PlatAuMenuTest {
     }
 
     @Test
-    void getIngredients() {
+    void setIngredients() {
     }
 
     @Test
-    void setIngredient() {
+    void setProportion() {
+    }
+
+    @Test
+    void setKcal() {
+    }
+
+    @Test
+    void setChol() {
+    }
+
+    @Test
+    void setGras() {
+    }
+
+    @Test
+    void setCode() {
+    }
+
+    @Test
+    void setDescription() {
+    }
+
+    @Test
+    void getResult() {
     }
 }

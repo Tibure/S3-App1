@@ -40,6 +40,14 @@ class PlatEnfantTest {
     }
 
     @Test
+    void getIngredients() {
+    }
+
+    @Test
+    void setIngredient() {
+    }
+
+    @Test
     void getProportion() {
     }
 

@@ -27,7 +27,7 @@ public class IngredientFactory {
             case EPICE:
                 return new Epice(nom, description);
             default:
-                throw new IngredientException("Type d'ingrédient invalide.");
+                return null;
         }
     }
 }

@@ -1,4 +1,4 @@
-Singleton : Chef
+Singleton : Chef + inventaire
 Factory : Création des ingrédients
 Observer : observe la facture et notifie le chef quand nouvel item
 State : État des factures

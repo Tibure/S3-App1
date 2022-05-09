@@ -12,7 +12,7 @@ public interface CommandeEtat{
      * @return Un booléan qui indique si le changement d'état est réussi ou non
      * @throws PlatsException Si le plat ne permet pas le changmement vers le nouveal état
      */
-    public boolean changeState(PlatChoisi aPlatChoisi) throws PlatsException;
+    public boolean changeState(PlatChoisi aPlatChoisi);
 
     /**
      * @return L'état actuel d'un plat

@@ -104,8 +104,20 @@ public class Inventaire implements IInventaire {
          * @return Vrai si ajout réussi, faux sinon
          */
         @Override
-        public boolean insert(IngredientInventaire ingredient) {
-            return lesIngredients.add(ingredient);
+        public boolean insert(IngredientInventaire ingredient) throws IngredientException {
+            int index = -1;
+            for(int i = 0; i < lesIngredients.size(); i++){
+                if(lesIngredients.get(i).getIngredient().getNom().equals(ingredient.getIngredient().getNom())){
+                    index = i;
+                    break;
+                }
+            }
+            if(index != -1)
+                lesIngredients.get(index).setQuantite(lesIngredients.get(index).getQuantite()+ingredient.getQuantite());
+            else
+                lesIngredients.add(ingredient);
+
+            return true;
         }
 
         /**
@@ -123,7 +135,7 @@ public class Inventaire implements IInventaire {
                 if(lesIngredients.get(i).getIngredient().getNom().equals(nom))
                 {
                     trouve = true;
-                    int inventaire = lesIngredients.get(i).getQuantite();
+                    double inventaire = lesIngredients.get(i).getQuantite();
                     if(inventaire > quantite && quantite >= 0)
                         lesIngredients.get(i).setQuantite(inventaire - quantite);
                     else if(inventaire == quantite)
@@ -133,6 +145,10 @@ public class Inventaire implements IInventaire {
                 }
             }
             return trouve;
+        }
+
+        public void setPosition(int position){
+            this.position = position;
         }
     }
 }

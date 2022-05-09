@@ -21,7 +21,7 @@ public class PlatAuMenu {
      */
     private double prix;
 
-    private Map<Ingredient, Integer> ingredients;
+    private Map<Ingredient, Double> ingredients;
 
     /**
      * Constructeur avec paramètres de la classe PlatAuMenu
@@ -29,7 +29,7 @@ public class PlatAuMenu {
      * @param description Description du plat
      * @param prix Prix total du plat
      */
-    public PlatAuMenu(int code, String description, double prix, Map<Ingredient, Integer> ingredients) {
+    public PlatAuMenu(int code, String description, double prix, Map<Ingredient, Double> ingredients) {
         this.code = code;
         this.description = description;
         this.prix = prix;
@@ -103,7 +103,11 @@ public class PlatAuMenu {
         this.prix = prix;
     }
 
-    public Map<Ingredient, Integer> getIngredients() {
+    public Map<Ingredient, Double> getIngredients() {
         return ingredients;
+    }
+
+    public void setIngredient(Map<Ingredient, Double> ingredients) {
+        this.ingredients = ingredients;
     }
 }

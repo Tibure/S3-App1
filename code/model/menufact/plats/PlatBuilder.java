@@ -24,7 +24,7 @@ public class PlatBuilder {
     /**
      * Liste d'ingrédients composant le plat
      */
-    private Map<Ingredient, Integer> ingredients;
+    private Map<Ingredient, Double> ingredients;
     /**
      * Proportion d'un plat du menu enfant par rapport à un plat adulte
      */
@@ -54,7 +54,7 @@ public class PlatBuilder {
     /**
      * @param ingredients Liste d'ingrédients
      */
-    public PlatBuilder setIngredients(Map<Ingredient, Integer> ingredients) {
+    public PlatBuilder setIngredients(Map<Ingredient, Double> ingredients) {
         this.ingredients = ingredients;
         return this;
     }

@@ -24,7 +24,7 @@ public interface IIterator {
      * @param ingredient L'élément à insérer
      * @return Vrai si réussi, faux sinon
      */
-    public boolean insert(IngredientInventaire ingredient);
+    public boolean insert(IngredientInventaire ingredient) throws IngredientException;
 
     /**
      *
@@ -34,4 +34,6 @@ public interface IIterator {
      * @throws IngredientException Lance une exception si la quantité est invalide
      */
     public boolean remove(String nom, int quantite) throws IngredientException;
+
+    public void setPosition(int position);
 }

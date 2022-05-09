@@ -25,12 +25,12 @@ public class Facture {
     private Client client;
     private Chef chef;
 
-    private ArrayList<Subscriber> subscribers;
+    private ArrayList<Subscriber> subscribers = new ArrayList<Subscriber>();
 
 
     /**********************Constantes ************/
     private final double TPS = 0.05;
-    private final double TVQ = 0.095;
+    private final double TVQ = 0.09975;
 
     /**
      *
@@ -79,7 +79,7 @@ public class Facture {
      * @return la valeur de la TVQ
      */
     private  double tvq(){
-        return TVQ*(TPS+1)*sousTotal();
+        return TVQ*sousTotal();
     }
 
     /**
@@ -170,8 +170,10 @@ public class Facture {
                 ", platchoisi=" + platchoisi +
                 ", courant=" + courant +
                 ", client=" + client +
-                ", TPS=" + TPS +
-                ", TVQ=" + TVQ +
+                ", Sous-total=" + sousTotal() +
+                ", TPS=" + TPS*sousTotal() +
+                ", TVQ=" + TVQ*sousTotal() +
+                ", Total=" + total()+
                 '}';
     }
 

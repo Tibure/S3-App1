@@ -30,7 +30,7 @@ public class PlatSante extends PlatAuMenu {
      * @param chol Quantité de cholestérol du plat
      * @param gras Quantité de gras du plat
      */
-    public PlatSante(int code, String description, double prix, double kcal, double chol, double gras, Map<Ingredient, Integer> ingredients) {
+    public PlatSante(int code, String description, double prix, double kcal, double chol, double gras, Map<Ingredient, Double> ingredients) {
         super(code, description, prix, ingredients);
         this.kcal = kcal;
         this.chol = chol;
