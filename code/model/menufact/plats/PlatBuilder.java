@@ -45,57 +45,65 @@ public class PlatBuilder {
     /**
      * @param prix Prix du plat
      */
-    public void setPrix(double prix) {
+    public PlatBuilder setPrix(double prix) {
         this.prix = prix;
+        return this;
     }
 
     /**
      * @param ingredients Liste d'ingrédients
      */
-    public void setIngredients(Map<Ingredient, Integer> ingredients) {
+    public PlatBuilder setIngredients(Map<Ingredient, Integer> ingredients) {
         this.ingredients = ingredients;
+        return this;
     }
 
     /**
      * @param proportion Proportion du plat enfant
      */
-    public void setProportion(double proportion) {
+    public PlatBuilder setProportion(double proportion) {
         this.proportion = proportion;
+        return this;
     }
 
     /**
      * @param kcal Calories du plat
      */
-    public void setKcal(double kcal) {
+    public PlatBuilder setKcal(double kcal) {
         this.kcal = kcal;
+        return this;
     }
 
     /**
      * @param chol Cholestérol du plat
      */
-    public void setChol(double chol) {
+    public PlatBuilder setChol(double chol) {
         this.chol = chol;
+        return this;
     }
 
     /**
      * @param gras Gras du plat
      */
-    public void setGras(double gras) {
+    public PlatBuilder setGras(double gras) {
         this.gras = gras;
+        return this;
     }
 
     /**
      * @param code Code du plat
      */
-    public void setCode(int code) {
+    public PlatBuilder setCode(int code) {
         this.code = code;
+        return this;
     }
 
     /**
      * @param description Description du plat
      */
-    public void setDescription(String description) {
+    public PlatBuilder setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     /**
