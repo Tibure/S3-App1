@@ -78,8 +78,11 @@ public class IngredientInventaire {
      *
      * @param ingredient L'ingrédient à modifier
      */
-    public void setIngredient(Ingredient ingredient){
-        this.ingredient = ingredient;
+    public void setIngredient(Ingredient ingredient) throws IngredientException {
+        if(ingredient != null)
+            this.ingredient = ingredient;
+        else
+            throw new IngredientException("Impossible de créer un IngredientInventaire avec un ingrédient NULL");
     }
 
     /**

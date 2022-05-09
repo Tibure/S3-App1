@@ -41,7 +41,7 @@ public class Inventaire implements IInventaire {
      */
     @Override
     public String toString() {
-        String retour = "model.inventaire.Inventaire{model.ingredients=";
+        String retour = "model.inventaire.Inventaire{ingredients=";
 
         if(lesIngredients.size() > 0){
             for(IngredientInventaire ingredientInventaire: lesIngredients){

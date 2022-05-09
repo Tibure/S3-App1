@@ -100,8 +100,8 @@ public class Client {
     public String toString() {
         return "model.menufact.Client{" +
                 "idClient=" + idClient +
-                ", nom='" + nom + '\'' +
-                ", numeroCarteCredit='" + numeroCarteCredit + '\'' +
+                ", nom=" + nom +
+                ", numeroCarteCredit=" + numeroCarteCredit +
                 '}';
     }
 }
