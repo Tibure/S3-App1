@@ -44,6 +44,7 @@ public class PlatBuilder {
 
     /**
      * @param prix Prix du plat
+     *
      */
     public PlatBuilder setPrix(double prix) {
         this.prix = prix;

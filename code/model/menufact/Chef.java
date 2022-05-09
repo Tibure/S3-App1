@@ -13,10 +13,23 @@ import model.menufact.plats.exceptions.PlatsException;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Classe de chef
+ */
 public class Chef implements  Subscriber{
+    /**
+     * Nom du chef
+     */
     private String nom;
+    /**
+     * Instance d'un chef
+     */
     private static Chef instanceChef;
 
+    /**
+     * Méthode qui crée un chef en s'assurant qu'il n'y en pas d'autre déjà présent
+     * @return L'instance du chef
+     */
     public static Chef getInstance(){
         if(instanceChef == null){
             instanceChef = new Chef();
@@ -24,38 +37,64 @@ public class Chef implements  Subscriber{
         return instanceChef;
     }
 
+    /**
+     * @return Le nom du chef
+     */
     public String getNom() {
         return  nom;
     }
 
+    /**
+     * @param aNom Attribue un nom au chef
+     */
     public void setNom(String aNom) {
         if(aNom != null) {
             this.nom = aNom;
         }
     }
 
+    /**
+     * Change l'état du plat pour l'état de préparation
+     * @param aPlat Plat choisi par le client
+     * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
+     */
     public void preparerPlat(PlatChoisi aPlat) throws PlatsException{
         aPlat.setEtat(new Preparation());
     }
 
+    /**
+     * Change l'état du plat pour l'état terminé
+     * @param aPlat Plat choisi par le client
+     * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
+     */
     public void terminerPlat(PlatChoisi aPlat) throws PlatsException{
         aPlat.setEtat(new Termine());
     }
 
+    /**
+     * Change l'état du plat pour l'état servi
+     * @param aPlat Plat choisi par le client
+     * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
+     */
     public void servirPlat(PlatChoisi aPlat) throws PlatsException {
         aPlat.setEtat(new Servi());
         //return aPlat;
     }
 
+    /**
+     * Change l'état du plat pour l'état impossible
+     * @param aPlat Plat choisi par le client
+     * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
+     */
     public void impossiblePlat(PlatChoisi aPlat) throws PlatsException{
         aPlat.setEtat(new Impossible());
     }
 
     /**
-     *
-     * @param aPlat
-     * @return aPlat modifie avec
-     * @throws PlatsException
+     * Méthode qui passe par tout les états de préparation d'un plat
+     * @param aPlat Plat choisi par le client
+     * @return aPlat retourne le plat avec les états changés
+     * @throws PlatsException Lance une exception si jamais il est impossible de retourner un plat
      */
     public PlatChoisi commanderPlat(PlatChoisi aPlat) throws IngredientException, PlatsException {
         aPlat.setEtat(new Commande());
@@ -70,6 +109,12 @@ public class Chef implements  Subscriber{
             throw new PlatsException("Impossible de continuer");
         }
     }
+
+    /**
+     * @param aPlat Plat choisi par le client
+     * @return Un booléan représentant la possibilité ou non de réaliser un plat
+     * @throws IngredientException Lance une exception si les ingrédients nécessaires pour la préparation d'un plat ne sont pas disponibles
+     */
     public boolean verifierSiPossible(PlatChoisi aPlat) throws IngredientException {
         Map< Ingredient, Integer> ingredients = aPlat.getPlat().getIngredients();
         Inventaire inventaire = Inventaire.getInstance();
@@ -103,6 +148,10 @@ public class Chef implements  Subscriber{
         }
         return  verif;
     }
+
+    /**
+     * @return Les informations du chef en texte
+     */
     @Override
     public String toString(){
         return  "Chef {" +
@@ -110,6 +159,12 @@ public class Chef implements  Subscriber{
                 "}" ;
     }
 
+    /**
+     * Méthode qui demande au chef de commencer la préparation d'un plat lorsqu'il recoit une commande (observer)
+     * @param p Plat choisi par le client
+     * @throws IngredientException Lance une exception si les ingrédients ne sont pas disponibles
+     * @throws PlatsException Lance une exception si le plat ne peut pas être changé d'état
+     */
     @Override
     public void update(PlatChoisi p) throws IngredientException, PlatsException {
         commanderPlat(p);
