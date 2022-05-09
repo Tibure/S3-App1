@@ -1,7 +1,9 @@
 package model.menufact.facture;
 
+import model.ingredients.exceptions.IngredientException;
 import model.menufact.Chef;
 import model.menufact.Client;
+import model.menufact.Subscriber;
 import model.menufact.facture.exceptions.FactureException;
 import model.menufact.plats.PlatChoisi;
 import model.menufact.plats.exceptions.PlatsException;
@@ -23,6 +25,8 @@ public class Facture {
     private Client client;
     private Chef chef;
 
+    private ArrayList<Subscriber> subscribers;
+
 
     /**********************Constantes ************/
     private final double TPS = 0.05;
@@ -39,6 +43,7 @@ public class Facture {
 
     public void associerChef(Chef aChef) {
         this.chef = aChef;
+        subscribers.add(aChef);
     }
 
     /**
@@ -129,14 +134,27 @@ public class Facture {
      * @param p un plat choisi
      * @throws FactureException Seulement si la facture est OUVERTE
      */
-    public void ajoutePlat(PlatChoisi p) throws FactureException, PlatsException
-    {
+    public void ajoutePlat(PlatChoisi p) throws FactureException, PlatsException, IngredientException {
         if (etat == FactureEtat.OUVERTE) {
-            chef.commanderPlat(p);
+
+            notifySubscribers(p);
+
             platchoisi.add(p);
         }
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");
+    }
+
+    /**
+     * Méthode pour avertir les abonnés qu'un nouveau plat a été ajouter à la facture
+     * @param p Plat à envoyer aux abonnés
+     * @throws IngredientException Lance une exception si les ingrédients nécessaires ne sont pas dans l'inventaire
+     * @throws PlatsException Lance une exeception si un changement d'état illégal arrive
+     */
+    private void notifySubscribers(PlatChoisi p) throws IngredientException, PlatsException {
+        for(Subscriber sub: subscribers){
+            sub.update(p);
+        }
     }
 
     /**

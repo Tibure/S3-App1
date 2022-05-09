@@ -225,7 +225,7 @@ public class ConsoleController {
         this.menu.ajoute(p5 = new PlatAuMenu(5, "Steak et frites", 22.99, steak));
         this.menu.ajoute(p6 = new PlatAuMenu(6, "Filet de saumon", 19.99, filetDeSaumon));
     }
-    //TODO
+
     /**
      * Méthode pour générer une facture aléatoire
      */
@@ -244,6 +244,8 @@ public class ConsoleController {
             ConsoleVue.afficherErreur(e1.getMessage());
         } catch (PlatsException e2) {
             ConsoleVue.afficherErreur(e2.getMessage());
+        } catch (IngredientException e3) {
+            ConsoleVue.afficherErreur(e3.getMessage());
         }
     }
 
@@ -251,7 +253,7 @@ public class ConsoleController {
      * Méthode pour remplir l'inventaire avec des quantités aléatoires
      */
     private void fillInventaire(){
-        inventaire = new Inventaire();
+        inventaire = Inventaire.getInstance();
         IngredientFactory factory = new IngredientFactory();
         IIterator iterator = inventaire.createIterator();
         try {
@@ -259,7 +261,7 @@ public class ConsoleController {
                 iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.FRUIT, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*2000), entree.getValue()));
             }
             for(Map.Entry<String, TypeUnit> entree: legumes.entrySet()){
-                iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.LEGUME, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*2000), entree.getValue()));
+                iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.LEGUME, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*100), entree.getValue()));
             }
             for(Map.Entry<String, TypeUnit> entree: epices.entrySet()){
                 iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.EPICE, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*2000), entree.getValue()));
@@ -268,7 +270,7 @@ public class ConsoleController {
                 iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.LAITIER, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*2000), entree.getValue()));
             }
             for(Map.Entry<String, TypeUnit> entree: viandes.entrySet()){
-                iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.VIANDE, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*2000), entree.getValue()));
+                iterator.insert(new IngredientInventaire(factory.getIngredient(TypeIngredient.VIANDE, entree.getKey(), "Description " + entree.getKey()), (int)(Math.random()*20000), entree.getValue()));
             }
 
 

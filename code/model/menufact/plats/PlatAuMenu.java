@@ -102,4 +102,8 @@ public class PlatAuMenu {
     public void setPrix(double prix) {
         this.prix = prix;
     }
+
+    public Map<Ingredient, Integer> getIngredients() {
+        return ingredients;
+    }
 }

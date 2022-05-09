@@ -13,6 +13,18 @@ public class Inventaire implements IInventaire {
      * Tableau dynamique des ingrédients
      */
     private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
+    private static Inventaire instance;
+
+
+    private Inventaire(){}
+
+    public static Inventaire getInstance(){
+        if(instance == null)
+            instance = new Inventaire();
+
+        return instance;
+    }
+
 
     /**
      *
