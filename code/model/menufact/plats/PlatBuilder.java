@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Classe qui crée le type de plats selon les paramètres reçus
+ * @author beae0601 - bure1301
  */
 public class PlatBuilder {
     /**
@@ -113,7 +114,7 @@ public class PlatBuilder {
      */
     public PlatAuMenu getResult() throws PlatsException {
 
-        if (code != 0 && description != null && prix != 0) {
+        if (code != 0 && description != null && prix != 0 && ingredients != null) {
             if (proportion == 0 && kcal == 0 && chol == 0 && gras == 0) {
                 return new PlatAuMenu(code, description, prix, ingredients);
             } else if (proportion != 0 && kcal == 0 && chol == 0 && gras == 0) {

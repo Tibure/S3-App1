@@ -5,6 +5,7 @@ import model.menufact.plats.exceptions.PlatsException;
 
 /**
  * Classe qui contrôles les plats choisis
+ * @author beae0601 - bure1301
  */
 public class PlatChoisi {
     /**

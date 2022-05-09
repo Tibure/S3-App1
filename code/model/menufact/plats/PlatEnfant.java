@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Classe qui contrôle les plats du menu enfant
+ * @author beae0601 - bure1301
  */
 public class PlatEnfant extends PlatAuMenu{
     /**

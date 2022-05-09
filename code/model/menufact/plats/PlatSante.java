@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Classe qui contrôle les plats du menu santé
+ * @author beae0601 - bure1301
  */
 public class PlatSante extends PlatAuMenu {
     /**

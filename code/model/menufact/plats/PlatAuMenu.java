@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Classe qui contrôle les plats du menu
+ * @author beae0601 - bure1301
  */
 public class PlatAuMenu {
     /**
@@ -37,10 +38,9 @@ public class PlatAuMenu {
     }
 
     /**
-     * Constructeur de base
+     * Constructeur par défaut
      */
-    public PlatAuMenu() {
-    }
+    public PlatAuMenu(){}
 
     /**
      *
@@ -50,7 +50,7 @@ public class PlatAuMenu {
     public String toString() {
         return "model.menufact.plats.PlatAuMenu{" +
                 "code=" + code +
-                ", description='" + description + '\'' +
+                ", description=" + description +
                 ", prix=" + prix +
                 "}\n";
     }
@@ -103,10 +103,18 @@ public class PlatAuMenu {
         this.prix = prix;
     }
 
+    /**
+     *
+     * @return Une map des ingrédients et de leur quantité
+     */
     public Map<Ingredient, Double> getIngredients() {
         return ingredients;
     }
 
+    /**
+     *
+     * @param ingredients Une map des ingrédients et de leur quantité
+     */
     public void setIngredient(Map<Ingredient, Double> ingredients) {
         this.ingredients = ingredients;
     }
