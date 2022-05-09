@@ -11,11 +11,8 @@ import model.menufact.plats.exceptions.PlatsException;
 public class TestMenuFact02 {
 
     //TODO: /******************* BIG TODO LIST **********************\
-    //TODO: Chef -> ajouter la vérification des ingrédients dispo
-    //TODO: Builder des types de plats
     //TODO: Préparer l'ensemble des tests unitaires
     //TODO: Monter la JavaDoc
-    //TODO: Garder l'inventaire des ingrédients et s'assurer que les plats ont des quantités
     //TODO: Vérifier l'intégralité des <<Exceptions>>
 
 

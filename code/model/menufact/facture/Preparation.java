@@ -7,8 +7,11 @@ public class Preparation implements CommandeEtat{
     private Etats etat = Etats.PREPARATION;
     @Override
     public boolean changeState(PlatChoisi aPlatChoisi) throws PlatsException {
-        aPlatChoisi.setEtat(this);
-        return true;
+        if(aPlatChoisi.getEtat().getEtat() == Etats.COMMANDE){
+            aPlatChoisi.setEtat(this);
+            return true;
+        }
+        return false;
     }
 
     @Override

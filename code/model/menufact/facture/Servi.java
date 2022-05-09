@@ -7,8 +7,11 @@ public class Servi implements CommandeEtat {
     private Etats etat = Etats.SERVI;
     @Override
     public boolean changeState(PlatChoisi aPlatChoisi) throws PlatsException {
-        aPlatChoisi.setEtat(this);
-        return true;
+        if(aPlatChoisi.getEtat().getEtat() == Etats.TERMINE){
+            aPlatChoisi.setEtat(this);
+            return true;
+        }
+        return false;
     }
 
     @Override
