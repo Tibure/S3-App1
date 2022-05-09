@@ -165,8 +165,8 @@ public class Facture {
     public String toString() {
         return "model.menufact.facture.Facture{" +
                 "date=" + date +
-                ", description='" + description + '\'' +
-                ", etat=" + etat +
+                ", description=" + description +
+                ", etat=" + etat.name() +
                 ", platchoisi=" + platchoisi +
                 ", courant=" + courant +
                 ", client=" + client +
@@ -183,7 +183,6 @@ public class Facture {
      */
     public String genererFacture()
     {
-        String lesPlats = new String();
         String factureGenere = new String();
 
         int i =1;
@@ -193,7 +192,7 @@ public class Facture {
                           "Date:" + date + "\n" +
                           "Description: " + description + "\n" +
                           "Client:" + client.getNom() + "\n" +
-                          "Les plats commandes:" + "\n" + lesPlats;
+                          "Les plats commandes:" + "\n";
 
         factureGenere += "Seq   Plat         Prix   Quantite\n";
         for (PlatChoisi plat : platchoisi)

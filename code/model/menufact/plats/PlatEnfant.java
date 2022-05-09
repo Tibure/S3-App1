@@ -36,7 +36,7 @@ public class PlatEnfant extends PlatAuMenu{
         }
         this.setCode(code);
         this.setDescription(description);
-        this.setPrix(prix);
+        this.setPrix(prix*proportion);
         this.setIngredient(ingredientsKid);
 
     }
