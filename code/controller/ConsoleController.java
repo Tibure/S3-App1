@@ -22,7 +22,9 @@ import java.util.Scanner;
 import static java.util.Map.entry;
 
 /**
+ *
  * Classe qui controle la vue
+ * @author beae0601 bure1301
  */
 public class ConsoleController {
     /**

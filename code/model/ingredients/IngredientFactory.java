@@ -3,7 +3,9 @@ package model.ingredients;
 import model.ingredients.exceptions.IngredientException;
 
 /**
+ *
  * Classe pour construire des ingrédients précis
+ * @author beae0601 bure1301
  */
 public class IngredientFactory {
     /**

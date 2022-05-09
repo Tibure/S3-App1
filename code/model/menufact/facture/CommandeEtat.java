@@ -5,6 +5,7 @@ import model.menufact.plats.exceptions.PlatsException;
 
 /**
  * Interface qui permet de changer les états d'un plat
+ * @author beae0601 bure1301
  */
 public interface CommandeEtat{
     /**

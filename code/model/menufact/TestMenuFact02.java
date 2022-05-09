@@ -11,11 +11,6 @@ import model.menufact.plats.exceptions.PlatsException;
 
 public class TestMenuFact02 {
 
-    //TODO: /******************* BIG TODO LIST **********************\
-    //TODO: Préparer l'ensemble des tests unitaires
-    //TODO: Monter la JavaDoc
-    //TODO: Vérifier l'intégralité des <<Exceptions>>
-
 
     public static void main(String[] args) {
         boolean trace = true;

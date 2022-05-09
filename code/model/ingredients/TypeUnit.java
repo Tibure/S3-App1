@@ -1,7 +1,9 @@
 package model.ingredients;
 
 /**
+ *
  * Enum des unité de mesure possible pour les ingrédient
+ * @author beae0601 bure1301
  */
 public enum TypeUnit {
     ML("mL"), L("L"), TASSE("tasses"), G("g"), KG("kg"), UNIT("unités");

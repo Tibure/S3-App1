@@ -4,6 +4,7 @@ import model.ingredients.exceptions.IngredientException;
 
 /**
  * Classe enfant d'ingrédient pour gérer les épices
+ * @author beae0601 bure1301
  */
 public class Epice extends Ingredient{
     /**

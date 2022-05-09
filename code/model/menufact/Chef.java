@@ -17,6 +17,7 @@ import java.util.Set;
 
 /**
  * Classe de chef
+ * @author beae0601 bure1301
  */
 public class Chef implements  Subscriber{
     /**

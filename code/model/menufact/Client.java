@@ -4,6 +4,7 @@ import model.menufact.exceptions.ClientException;
 
 /**
  * Classe qui gère le client
+ * @author beae0601 bure1301
  */
 public class Client {
     /**

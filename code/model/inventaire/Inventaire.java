@@ -7,17 +7,28 @@ import java.util.ArrayList;
 
 /**
  * Classe model.inventaire contenant une liste des ingrédients, caché par un iterator
+ * @author beae0601 bure1301
  */
 public class Inventaire implements IInventaire {
     /**
+     *
      * Tableau dynamique des ingrédients
      */
     private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
+    /**
+     * Instance d'un singleton
+     */
     private static Inventaire instance;
 
 
+    /**
+     * Constructeur de base de la classe
+     */
     private Inventaire(){}
 
+    /**
+     * @return Création d'un instance afin de s'assurer qu'il y en a qu'une seule
+     */
     public static Inventaire getInstance(){
         if(instance == null)
             instance = new Inventaire();

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Classe qui gère le menu
+ * @author beae0601 bure1301
  */
 public class Menu {
     /**

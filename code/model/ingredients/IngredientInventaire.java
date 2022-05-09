@@ -3,7 +3,9 @@ package model.ingredients;
 import model.ingredients.exceptions.IngredientException;
 
 /**
+ *
  * Classe combinant un ingrédient avec sa quantité et ses unitées
+ * @author beae0601 bure1301
  */
 public class IngredientInventaire {
     /**

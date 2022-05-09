@@ -3,7 +3,9 @@ package model.ingredients;
 import model.ingredients.exceptions.IngredientException;
 
 /**
+ *
  * Classe enfant d'ingrédient pour gérer les produits laitiers
+ * @author beae0601 bure1301
  */
 public class Laitier extends Ingredient{
     /**

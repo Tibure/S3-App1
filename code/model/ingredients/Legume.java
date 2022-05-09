@@ -3,7 +3,9 @@ package model.ingredients;
 import model.ingredients.exceptions.IngredientException;
 
 /**
+ *
  * Classe enfant d'ingrédient pour gérer les légumes
+ * @author beae0601 bure1301
  */
 public class Legume extends Ingredient{
     /**

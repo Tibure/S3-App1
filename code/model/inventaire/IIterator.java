@@ -5,6 +5,7 @@ import model.ingredients.exceptions.IngredientException;
 
 /**
  * Interface pour itérérer sur l'model.inventaire
+ * @author beae0601 bure1301
  */
 public interface IIterator {
     /**
@@ -35,5 +36,8 @@ public interface IIterator {
      */
     public boolean remove(String nom, int quantite) throws IngredientException;
 
+    /**
+     * @param position  Position de l'iterator
+     */
     public void setPosition(int position);
 }

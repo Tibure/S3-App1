@@ -3,7 +3,9 @@ package model.ingredients;
 import model.ingredients.exceptions.IngredientException;
 
 /**
+ *
  * Classe parent qui represente les ingrédients
+ * @author beae0601 bure1301
  */
 public class Ingredient {
     /**
