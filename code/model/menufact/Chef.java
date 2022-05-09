@@ -120,7 +120,6 @@ public class Chef implements  Subscriber{
     /**
      * @param aPlat Plat choisi par le client
      * @return Un booléan représentant la possibilité ou non de réaliser un plat
-     * @throws IngredientException Lance une exception si les ingrédients nécessaires pour la préparation d'un plat ne sont pas disponibles
      */
     public boolean verifierSiPossible(PlatChoisi aPlat){
         Map< Ingredient, Double> ingredients = aPlat.getPlat().getIngredients();

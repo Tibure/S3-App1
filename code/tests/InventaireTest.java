@@ -7,6 +7,9 @@ import model.inventaire.Inventaire;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventaireTest {
@@ -18,6 +21,7 @@ class InventaireTest {
     @BeforeEach
     void setUp() {
         inv1 = Inventaire.getInstance();
+        IIterator iterator = inv1.createIterator();
         factory = new IngredientFactory();
 
         try {
@@ -34,6 +38,19 @@ class InventaireTest {
             ii3 = new IngredientInventaire(i3, 2000.0, TypeUnit.ML);
         } catch (IngredientException e) {
             fail();
+        }
+        Map<String, Double> map = new HashMap<>();
+        IngredientInventaire ingredient = null;
+        while(iterator.hasNext()){
+            ingredient = iterator.next();
+            map.put(ingredient.getIngredient().getNom(), ingredient.getQuantite());
+        }
+        for(String str: map.keySet()){
+            try {
+                iterator.remove(str, map.get(str).intValue());
+            } catch (IngredientException e) {
+                fail();
+            }
         }
     }
 
@@ -61,5 +78,75 @@ class InventaireTest {
                 "nom=Poivre, description=Description, type=EPICE}, quantité=100.0, unité=g}\n" +
                 "model.ingredients.IngredientInventaire{ingredient=model.ingredients.Ingredient{" +
                 "nom=Lait, description=Description, type=LAITIER}, quantité=2000.0, unité=mL}}");
+    }
+
+    @Test
+    void testInsert(){
+        inv3 = Inventaire.getInstance();
+        IIterator iterator = inv3.createIterator();
+        try {
+            assertTrue(iterator.insert(ii1));
+            assertTrue(iterator.insert(ii1));
+        } catch (IngredientException e) {
+            fail();
+        }
+
+    }
+
+    @Test
+    void testRemove(){
+        inv3 = Inventaire.getInstance();
+        IIterator iterator = inv3.createIterator();
+        try {
+            iterator.insert(ii1);
+            iterator.insert(ii2);
+            iterator.insert(ii3);
+        } catch (IngredientException e) {
+            fail();
+        }
+
+        try {
+            assertTrue(iterator.remove("Fraise", 10));
+        } catch (IngredientException e) {
+            fail();
+        }
+
+        try {
+            assertTrue(iterator.remove("Fraise", 40));
+        } catch (IngredientException e) {
+            fail();
+        }
+        try {
+            assertFalse(iterator.remove("Boeuf", 2));
+        } catch (IngredientException e) {
+            fail();
+        }
+
+        try {
+            assertFalse(iterator.remove("Poivre", 101));
+        } catch (IngredientException e) {
+            fail();
+        }
+
+    }
+
+    @Test
+    void testNext(){
+        inv3 = Inventaire.getInstance();
+        IIterator iterator = inv3.createIterator();
+        try {
+            iterator.insert(ii1);
+            iterator.insert(ii2);
+            iterator.insert(ii3);
+        } catch (IngredientException e) {
+            fail();
+        }
+
+        while (iterator.hasNext())
+            assertTrue(iterator.next() != null);
+
+
+        assertTrue(iterator.next() == null);
+
     }
 }

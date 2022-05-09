@@ -15,11 +15,6 @@ public class PlatEnfant extends PlatAuMenu{
      */
     private double proportion;
 
-    /**
-     * Constructeur de base de la classe PlatEnfant
-     */
-    public PlatEnfant() {
-    }
 
     /**
      * Constructeur avec paramètres de la classe PlatEnfant

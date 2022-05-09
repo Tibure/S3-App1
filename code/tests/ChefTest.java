@@ -2,6 +2,7 @@ package tests;
 
 import model.ingredients.*;
 import model.ingredients.exceptions.IngredientException;
+import model.inventaire.IIterator;
 import model.inventaire.Inventaire;
 import model.menufact.Chef;
 import model.menufact.facture.*;
@@ -33,6 +34,16 @@ class ChefTest {
         }
         factory = new IngredientFactory();
         inv = Inventaire.getInstance();
+        IIterator iterator = inv.createIterator();
+        IngredientInventaire ingredient = null;
+        while(iterator.hasNext()){
+            ingredient = iterator.next();
+            try {
+                iterator.remove(ingredient.getIngredient().getNom(), (int) ((ingredient.getQuantite())-1));
+            } catch (IngredientException e) {
+                fail();
+            }
+        }
     }
 
     @Test
@@ -130,7 +141,7 @@ class ChefTest {
     void commanderPlat() {
 
         try {
-            c3.commanderPlat(p1);
+            c3.commanderPlat(p2);
             fail();
         } catch (Exception e) {}
 

@@ -38,11 +38,6 @@ public class PlatSante extends PlatAuMenu {
         this.gras = gras;
     }
 
-    /**
-     * Constructeur de base de la classe PlatSante
-     */
-    public PlatSante() {
-    }
 
     /**
      *

@@ -23,6 +23,8 @@ class IngredientFactoryTest {
     void getIngredient() {
         try {
             i1 = factory.getIngredient(TypeIngredient.FRUIT, "Fraise", "Description");
+            factory.getIngredient(TypeIngredient.VIANDE, "Fraise", "Description");
+            factory.getIngredient(TypeIngredient.LEGUME, "Fraise", "Description");
         } catch (IngredientException e) {
             fail();
         }

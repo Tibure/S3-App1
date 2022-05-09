@@ -78,7 +78,6 @@ public class PlatChoisi {
     /**
      *
      * @param aEtat État que le plat est actuellement
-     * @throws PlatsException Lance une exception si le changement d'état est impossible
      */
     public void setEtat(CommandeEtat aEtat){
         this.etat = aEtat;
