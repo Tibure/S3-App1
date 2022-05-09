@@ -24,7 +24,7 @@ public interface IIterator {
      * @param ingredient L'élément à insérer
      * @return Vrai si réussi, faux sinon
      */
-    public boolean insert(IngredientInventaire ingredient);
+    public boolean insert(IngredientInventaire ingredient) throws IngredientException;
 
     /**
      *

@@ -61,7 +61,9 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void preparerPlat(PlatChoisi aPlat) throws PlatsException{
-        new Preparation().changeState(aPlat);
+        if(!(new Preparation().changeState(aPlat)))
+            throw new PlatsException("Impossible de passer à l'état préparé");
+
     }
 
     /**
@@ -70,7 +72,8 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void terminerPlat(PlatChoisi aPlat) throws PlatsException{
-        new Termine().changeState(aPlat);
+        if(!(new Termine().changeState(aPlat)))
+            throw new PlatsException("Impossible de passer à l'état terminé");
     }
 
     /**
@@ -79,7 +82,8 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void servirPlat(PlatChoisi aPlat) throws PlatsException {
-        new Servi().changeState(aPlat);
+        if(!(new Servi().changeState(aPlat)))
+            throw new PlatsException("Impossible de passer à l'état servi");
     }
 
     /**
@@ -88,7 +92,8 @@ public class Chef implements  Subscriber{
      * @throws PlatsException Lance une exception si le changement d'état n'as pas pu être effectué
      */
     public void impossiblePlat(PlatChoisi aPlat) throws PlatsException{
-        new Impossible().changeState(aPlat);
+        if(!(new Impossible().changeState(aPlat)))
+            throw new PlatsException("Impossible de passer à l'état impossible");
     }
 
     /**
@@ -116,7 +121,7 @@ public class Chef implements  Subscriber{
      * @return Un booléan représentant la possibilité ou non de réaliser un plat
      * @throws IngredientException Lance une exception si les ingrédients nécessaires pour la préparation d'un plat ne sont pas disponibles
      */
-    public boolean verifierSiPossible(PlatChoisi aPlat) throws IngredientException {
+    public boolean verifierSiPossible(PlatChoisi aPlat){
         Map< Ingredient, Double> ingredients = aPlat.getPlat().getIngredients();
         Inventaire inventaire = Inventaire.getInstance();
         IIterator iterator = inventaire.createIterator();
@@ -131,13 +136,17 @@ public class Chef implements  Subscriber{
 
         for(int i = 0; i < ingredientsList.size() && verif; i++) {
             iterator.setPosition(0);
+            if(!iterator.hasNext())
+                verif = false;
             while (iterator.hasNext()) {
                 ingredientsInventaire = iterator.next();
 
                 if(ingredientsInventaire.getIngredient().getNom().equals(ingredientsList.get(i).getNom())) {
                     verif = true;
                     if (ingredientsInventaire.getQuantite() >= ingredients.get(ingredientsList.get(i)).intValue()) {
-                        iterator.remove(ingredientsList.get(i).getNom(), ingredients.get(ingredientsList.get(i)).intValue());
+                        try {
+                            iterator.remove(ingredientsList.get(i).getNom(), ingredients.get(ingredientsList.get(i)).intValue());
+                        } catch (IngredientException e) {}
                         break;
                     }
                     else {

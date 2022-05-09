@@ -6,7 +6,7 @@ import model.menufact.plats.exceptions.PlatsException;
 public class Preparation implements CommandeEtat{
     private Etats etat = Etats.PREPARATION;
     @Override
-    public boolean changeState(PlatChoisi aPlatChoisi) throws PlatsException {
+    public boolean changeState(PlatChoisi aPlatChoisi){
         if(aPlatChoisi.getEtat().getEtat() == Etats.COMMANDE){
             aPlatChoisi.setEtat(this);
             return true;
