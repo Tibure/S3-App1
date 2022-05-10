@@ -1,0 +1,12 @@
+controller
+model.ingredients
+model.ingredients.exceptions
+model.inventaire
+model.menufact
+model.menufact.exceptions
+model.menufact.facture
+model.menufact.facture.exceptions
+model.menufact.plats
+model.menufact.plats.exceptions
+tests
+vue
